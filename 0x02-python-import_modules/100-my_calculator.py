@@ -5,17 +5,19 @@ if __name__ == "__main__":
 
     operators = {"+": add, "-": sub, "*": mul, "/": div}
 
-    args = sys.argv[1:]
-    if len(args) != 3:
+    args = sys.argv
+    print(args)
+    if len(args) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    a, ops, b = map(int, args)
+    ops = args[2]
+    a = int(args[1])
+    b = int(args[3])
 
     if ops not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-    
-    for op in ops:
-        result = operators[op](a, b)
-        print("{} {} {} = {}".format(a, op, b, result))
+
+    result = operators[ops](a, b)
+    print("{} {} {} = {}".format(a, ops, b, result))

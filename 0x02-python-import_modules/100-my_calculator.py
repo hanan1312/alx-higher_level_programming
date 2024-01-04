@@ -10,11 +10,12 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-    a, op, b = map(int, args)
+    a, ops, b = map(int, args)
 
-    if op not in operators:
+    if ops not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-
-    result = operators[op](a, b)
-    print("{} {} {} = {}".format(a, op, b, result))
+    
+    for op in ops:
+        result = operators[op](a, b)
+        print("{} {} {} = {}".format(a, op, b, result))

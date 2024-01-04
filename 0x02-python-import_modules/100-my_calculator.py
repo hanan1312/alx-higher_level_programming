@@ -6,7 +6,6 @@ if __name__ == "__main__":
     operators = {"+": add, "-": sub, "*": mul, "/": div}
 
     args = sys.argv
-    print(args)
     if len(args) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)

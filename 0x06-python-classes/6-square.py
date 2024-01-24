@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""Define a class Square."""
 
 class Square:
+    """Square."""
     def __init__(self, size=0, position=(0, 0)):
-
+        """ size: private argument"""
         self.size = size
         self.position = position
 
@@ -32,6 +34,7 @@ class Square:
         self.__position = value
 
     def area(self):
+        """Square."""
         return (self.__size * self.__size)
 
     def my_print(self):

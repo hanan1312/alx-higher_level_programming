@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-
+"""Define a class Square."""
 class Square:
-
+    """Square."""
     def __init__(self, size):
-
+        """ size: private argument"""
         self.size = size
 
     @property
@@ -19,7 +19,7 @@ class Square:
         self.__size = value
 
     def area(self):
-
+        """Square."""
         return (self.__size * self.__size)
 
     def my_print(self):

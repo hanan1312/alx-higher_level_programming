@@ -16,7 +16,6 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    """ width function """
     def width(self):
         """Set and get width of the Rectangle."""
         return self.__width
@@ -30,7 +29,6 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    """ height function """
     def height(self):
         """Set and get height of the Rectangle."""
         return self.__height

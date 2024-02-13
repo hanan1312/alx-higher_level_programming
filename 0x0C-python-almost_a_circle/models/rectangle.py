@@ -16,6 +16,7 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
+    """ width function """
     def width(self):
         """Set and get width of the Rectangle."""
         return self.__width
@@ -29,6 +30,7 @@ class Rectangle(Base):
         self.__width = value
 
     @property
+    """ height function """
     def height(self):
         """Set and get height of the Rectangle."""
         return self.__height
@@ -66,11 +68,13 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
+    
+    """ area function """
     def area(self):
         """Calculation for the  area of the Rectangle"""
         return self.width * self.height
 
+    """ display function """
     def display(self):
         """view the rectangle"""
 

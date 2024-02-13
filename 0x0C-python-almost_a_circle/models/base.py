@@ -3,7 +3,7 @@
 
 import json
 class Base:
-    """"""
+    """ First class Bass"""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -12,13 +12,15 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
+   
+    """ to json str function """
     def to_json_string(list_dictionaries):
         if list_dictionaries == None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
+    """ save to file function """
     def save_to_file(cls, list_objs):
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
@@ -29,6 +31,7 @@ class Base:
                 jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
+    """ from json to str function """
     def from_json_string(json_string):
 
         if json_string is None or json_string == "[]":
@@ -36,6 +39,7 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
+    """ create function """
     def create(cls, **dictionary):
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
@@ -46,6 +50,7 @@ class Base:
             return new
 
     @classmethod
+    """ load from file function """
     def load_from_file(cls):
 
         filename = str(cls.__name__) + ".json"

@@ -10,18 +10,20 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     @property
+    """ Size function """
     def size(self):
         """Set and get size of the Square."""
         return self.width
 
     @size.setter
+ 
     def size(self, value):
         self.width = value
         self.height = value
 
 
 
-
+    """ update function """
     def update(self, *args, **kwargs):
         """
         Updates the Square's attributes based on provided arguments.
@@ -60,11 +62,11 @@ class Square(Rectangle):
                     self.y = value
 
 
-
+    """ to dict function """
     def to_dictionary(self):
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
-
+    """ str function """
     def __str__(self):
         """using the __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,self.width)

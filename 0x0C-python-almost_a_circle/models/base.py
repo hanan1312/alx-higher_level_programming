@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """Write the first class Base"""
 
+
 import json
+import turtle
+import csv
+
 class Base:
     """"""
     __nb_objects = 0

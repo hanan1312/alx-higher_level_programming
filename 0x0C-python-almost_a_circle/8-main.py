@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 8-main file """
+""" 8-main """
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":

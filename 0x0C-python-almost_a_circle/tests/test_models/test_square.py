@@ -5,11 +5,9 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
-""" Test Square test """
 class TestSquare(unittest.TestCase):
-    
+
     def test_init(self):
-    """ test init  function """
         square = Square(5)
         self.assertEqual(square.id, Base.__nb_objects - 1)
         self.assertEqual(square.size, 5)
@@ -25,10 +23,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square2.height, 3)
         self.assertEqual(square2.x, 2)
         self.assertEqual(square2.y, 1)
-   
-    
+
     def test_init_errors(self):
-    """ test init errors function """
         with self.assertRaises(TypeError):
             Square("invalid")  # Size as string
         with self.assertRaises(ValueError):
@@ -42,14 +38,11 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(5, 2, -1)  # Y negative
 
-    
     def test_area(self):
-    """ test area function """
         square = Square(5)
         self.assertEqual(square.area(), 25)
 
     def test_display(self):
-    """ test display function """
         # Capture display output in a StringIO buffer
         from io import StringIO
         buffer = StringIO()
@@ -59,13 +52,10 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(buffer.getvalue(), expected_output)
 
     def test_str(self):
-    """ test str function """
         square = Square(4, 1, 2, 42)
         self.assertEqual(str(square), "[Square] (42) 1/2 - 4")
 
-    
     def test_update(self):
-    """ test update function """
         square = Square(5)
 
         # Test no-keyword arguments
@@ -87,7 +77,6 @@ class TestSquare(unittest.TestCase):
             square.update(1, 2, x=3)
 
     def test_to_dictionary(self):
-    """ test to dict function """
         square = Square(2, 1, 2, 42)
         expected_dict = {"id": 42, "size": 2, "x": 1, "y": 2}
         self.assertEqual(square.to_dictionary(), expected_dict)

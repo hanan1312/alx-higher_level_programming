@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The Square class that inherits from Rectangle"""
+"""class Square that inherits from Rectangle"""
 from models.rectangle import Rectangle
 
 
@@ -11,7 +11,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """Set and get size of the Square."""
+        """Set/get size of the Square."""
         return self.width
 
     @size.setter
@@ -19,7 +19,9 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    """ update function """
+
+
+
     def update(self, *args, **kwargs):
         """
         Updates the Square's attributes based on provided arguments.
@@ -57,10 +59,12 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
 
+
+
     def to_dictionary(self):
-    """ to dict function """
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
+
     def __str__(self):
-        """using the __str__ method"""
+        """overriding the __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,self.width)

@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""The Rectangle Class that inherits from Base"""
+"""Write the first class Rectangle that inherits from Base"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class inherits from Base"""
+    """Rectangle that inherits from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize the rectangle class"""
+        """Initialize the rectangle"""
 
         self.width = width
         self.height = height
@@ -17,7 +17,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Set and get width of the Rectangle."""
+        """Set/get width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -30,7 +30,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Set and get height of the Rectangle."""
+        """Set/get height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -43,7 +43,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Set and get x coordinate of the Rectangle."""
+        """Set/get x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
@@ -56,7 +56,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set and get y coordinate of the Rectangle."""
+        """Set/get y coordinate of the Rectangle."""
         return self.__y
 
     @y.setter
@@ -66,15 +66,13 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
-    """ area function """
+
     def area(self):
-        """Calculation for the  area of the Rectangle"""
+        """Calculate the area of the Rectangle"""
         return self.width * self.height
 
-    """ display function """
     def display(self):
-        """view the rectangle"""
+        """Display the rectangle"""
 
         if self.width == 0 or self.height == 0:
             print("")
@@ -91,7 +89,7 @@ class Rectangle(Base):
 
 
     def __str__(self):
-        """using the __str__ method"""
+        """overriding the __str__ method"""
 
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,self.x, self.y,self.width, self.height)
 

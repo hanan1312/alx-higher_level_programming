@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Write the first class Base"""
+"""My first approach for class Base"""
 
 
 import json
 import turtle
 import csv
 class Base:
-    """Base model.
+    """Base class.
 
-    This Represents the "base" for all other classes in project 0x0C*.
+    my "base" class is essintial for all other classes in that directory*.
 
     Private Class Attributes:
         __nb_object (int): Number of instantiated Bases.

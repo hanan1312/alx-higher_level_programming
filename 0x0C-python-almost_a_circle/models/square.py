@@ -4,7 +4,6 @@
 
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
     """Rectangle that inherits from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
@@ -64,9 +63,11 @@ class Square(Rectangle):
 
 
     def to_dictionary(self):
+        """dict fucntion"""
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
 
     def __str__(self):
         """overriding the __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,self.width)
+

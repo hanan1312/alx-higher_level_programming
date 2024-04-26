@@ -2,30 +2,37 @@
 """ function that finds a peak in a list of unsorted integers. """
 
 def find_peak(list_of_integers):
-    """
-    Finds a peak element in a list of unsorted integers.
+  """
+  Finds a peak element in an unsorted list of integers.
 
-    A peak element is an element that is greater than both its neighbors.
-    If the list is empty or has only one element, None is returned.
+  Args:
+      list_of_integers: A list of integers.
 
-    Args:
-        list_of_integers: A list of unsorted integers.
+  Returns:
+      The index of a peak element in the list, or None if no peak is found.
 
-    Returns:
-        The peak element in the list, or None if the list is empty or has only one element.
-    """
-
-      # Handle empty list or single element case
-    if len(list_of_integers) <= 1:
-      return None
-
-      # Iterate through the list, checking for elements greater than both neighbors
-    if len(list_of_integers) % 2 == 0:
-        return max(list_of_integers)
-    else:
-        for i in range(1, len(list_of_integers) - 1):
-          if list_of_integers[i] > list_of_integers[i - 1] and list_of_integers[i] > list_of_integers[i + 1]:
-            return list_of_integers[i]
-
-      # No peak found in the list
+  Time complexity: O(log n)
+  """
+  if len(list_of_integers) == 0:
     return None
+
+  left = 0
+  right = len(list_of_integers) - 1
+
+  while left < right:
+    mid = left + (right - left) // 2
+
+    # Check if mid is a peak (both neighbors are smaller)
+    if (mid == 0 or list_of_integers[mid] > list_of_integers[mid - 1]) and \
+        (mid == len(list_of_integers) - 1 or list_of_integers[mid] > list_of_integers[mid + 1]):
+      return mid
+
+    # If left half is greater, search for peak there
+    if list_of_integers[mid] < list_of_integers[left]:
+      right = mid - 1
+    else:
+      left = mid + 1
+
+  # If entire loop completes, no peak is found
+  return None
+
